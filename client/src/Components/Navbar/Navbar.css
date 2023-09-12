@@ -1,0 +1,30 @@
+.nav-container {
+  /* background: linear-gradient(
+    to right,
+    rgb(21, 159, 141) 0%,
+    rgb(56, 58, 159) 100%
+  ); */
+  background-color: #80ddff;
+  display: flex;
+}
+
+.img-container img {
+  width: 4rem;
+  margin: 10px;
+}
+
+.link-container {
+  display: flex;
+  width: 16rem;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 30vw;
+}
+
+.link-container a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  font-size: 120%;
+  white-space: nowrap;
+}

@@ -1,0 +1,24 @@
+.inputs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
+  color: aquamarine;
+}
+.inputs input {
+  border-radius: 10px;
+}
+.inputs div {
+  margin-bottom: 20px;
+}
+.submit-btn {
+  margin-top: 50px;
+  margin-left: 335px;
+  border-radius: 10px;
+  font-family: Arial;
+  font-weight: bolder;
+  background-color: rgba(180, 230, 239, 0.7);
+}
+.submit-btn:hover {
+  background-color: rgba(207, 202, 218, 0.3);
+}

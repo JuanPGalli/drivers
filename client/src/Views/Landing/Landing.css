@@ -1,0 +1,53 @@
+.landing-page {
+  position: relative;
+  height: 88vh;
+}
+
+.landing-page img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.objectives-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.7
+  ); /* Fondo semitransparente para el texto */
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Sombra para el texto */
+}
+
+.objectives-text h4 {
+  margin: 0;
+  font-size: 24px;
+  color: #333; /* Color del texto */
+}
+
+.objectives-text p {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 10px 0;
+  color: #333;
+}
+.objectives-text ul {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  list-style-type: disc; /* Estilo de viñetas para la lista no ordenada */
+  font-weight: bold;
+  margin: 10px 0; /* Margen superior e inferior para la lista */
+  padding-left: 20px; /* Espacio a la izquierda para las viñetas */
+  color: #333; /* Color del texto para los elementos de la lista */
+}
+
+.objectives-text li {
+  margin: 5px 0; /* Margen superior e inferior para cada elemento de la lista */
+}
