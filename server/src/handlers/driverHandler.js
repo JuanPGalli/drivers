@@ -39,7 +39,9 @@ const postDriverHandler = async (req, res) => {
       dob,
       teamId
     );
-    res.status(200).json(`The Driver ${name} was successfully created`);
+    res
+      .status(200)
+      .json(`The Driver ${name} ${surname} was successfully created`);
   } catch (error) {
     res.status(400).json({ error: error.message });
   }

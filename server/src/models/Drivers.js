@@ -15,10 +15,6 @@ module.exports = (sequelize) => {
         type: DataTypes.STRING,
         allowNull: false,
         validate: {
-          is: {
-            args: /^[A-Za-z]+(?: [A-Za-z]+)*$/, // sólo acepta espacios y letras.
-            msg: "Name can only contain letters and spaces.",
-          },
           len: {
             args: [2, 15],
             msg: "Name must be between 2 and 15 characters long",
@@ -29,10 +25,6 @@ module.exports = (sequelize) => {
         type: DataTypes.STRING,
         allowNull: false,
         validate: {
-          is: {
-            args: /^[A-Za-z]+(?: [A-Za-z]+)*$/,
-            msg: "Surname can only contain letters and spaces.",
-          },
           len: {
             args: [2, 15],
             msg: "Surname must be between 2 and 15 characters long.",
@@ -47,7 +39,7 @@ module.exports = (sequelize) => {
       image: {
         type: DataTypes.STRING,
         allowNull: false,
-        defaultValue: "defaultImage.jpg",
+        defaultValue: "/defaultImage.jpg",
       },
       nationality: {
         type: DataTypes.STRING,
@@ -55,7 +47,7 @@ module.exports = (sequelize) => {
         validate: {
           isAlpha: {
             args: true,
-            msg: "Nationality can only contain letters and spaces.",
+            msg: "Nationality can only contain letters and no spaces.",
           },
         },
       },

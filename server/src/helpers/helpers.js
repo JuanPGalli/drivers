@@ -1,3 +1,6 @@
+const URL =
+  "https://cdn.pixabay.com/photo/2013/07/12/15/36/motorsports-150157_960_720.png";
+
 const cleanArrayApi = (arr) =>
   arr.map((elem) => {
     return {
@@ -5,7 +8,7 @@ const cleanArrayApi = (arr) =>
       name: elem.name.forename,
       surname: elem.name.surname,
       description: elem.description,
-      image: elem.image.url ? elem.image.url : "defaultImage.jpg",
+      image: elem.image.url ? elem.image.url : URL,
       nationality: elem.nationality,
       dob: elem.dob,
       teams: elem.teams,
