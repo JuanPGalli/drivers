@@ -228,14 +228,13 @@ const Form = () => {
           {errors.description}
         </div>
         <label>Teams:</label>
-        <select name="teams" onChange={handleChange} /* multiple */>
+        <select name="teams" onChange={handleChange}>
           <option value="none">Select Teams</option>
           {allTeams.map((team) => (
             <option key={team.id} value={team.id}>
               {team.name}
             </option>
           ))}
-          {/* Ver Video Clase Para colocar los TEAMS 1:08:27 */}
         </select>
         <input
           disabled={disable()}

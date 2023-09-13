@@ -146,52 +146,54 @@ const Home = () => {
 
   return (
     <div className="home-container">
-      <div>
-        <input
-          type="text"
-          value={searchBar}
-          onChange={(event) => setSearchBar(event.target.value)}
-          placeholder="Search by driver name"
-        />
-        <button onClick={handleSearch}>Search</button>
-      </div>
-      <div>
-        <button onClick={prevPage}>Prev</button>
-        <button onClick={nextPage}>Next</button>
-      </div>
-      <div>
-        <label>Teams Filter: </label>
-        {console.log(driversFiltered)}
-        <select onChange={filterTeam}>
-          <option defaultChecked value="0">
-            -
-          </option>
-          {allTeams.map((team) => (
-            <option key={team.id} value={team.name}>
-              {team.name}
+      <div className="home-bar">
+        <div className="home-searchBar">
+          <input
+            type="text"
+            value={searchBar}
+            onChange={(event) => setSearchBar(event.target.value)}
+            placeholder="Search by driver name"
+          />
+          <button onClick={handleSearch}>Search</button>
+        </div>
+        <div className="home-pagination">
+          <button onClick={prevPage}>Prev</button>
+          <button onClick={nextPage}>Next</button>
+        </div>
+        <div className="home-filters">
+          <label>Teams Filter: </label>
+          {console.log(driversFiltered)}
+          <select onChange={filterTeam}>
+            <option defaultChecked value="0">
+              -
             </option>
-          ))}
-        </select>
-        <label>Order and Filter by: </label>
-        <select onChange={filterOrd} name="" id="">
-          <option defaultChecked value="0">
-            -
-          </option>
-          <option value="name asc">name asc</option>
-          <option value="name dct">name dct</option>
-          <option value="dob asc">dob asc</option>
-          <option value="dob dct">dob dct</option>
-          <option value="API">API</option>
-          <option value="DB">DB</option>
-        </select>
-        {driverByName.length > 0 ? (
-          <Cards allDrivers={itemsFiltered} />
-        ) : filters ? (
-          <Cards allDrivers={itemsFiltered} />
-        ) : (
-          <Cards allDrivers={items} />
-        )}
+            {allTeams.map((team) => (
+              <option key={team.id} value={team.name}>
+                {team.name}
+              </option>
+            ))}
+          </select>
+          <label>Order and Filter by: </label>
+          <select onChange={filterOrd} name="" id="">
+            <option defaultChecked value="0">
+              -
+            </option>
+            <option value="name asc">name asc</option>
+            <option value="name dct">name dct</option>
+            <option value="dob asc">dob asc</option>
+            <option value="dob dct">dob dct</option>
+            <option value="API">API</option>
+            <option value="DB">DB</option>
+          </select>
+        </div>
       </div>
+      {driverByName.length > 0 ? (
+        <Cards allDrivers={itemsFiltered} />
+      ) : filters ? (
+        <Cards allDrivers={itemsFiltered} />
+      ) : (
+        <Cards allDrivers={items} />
+      )}
     </div>
   );
 };

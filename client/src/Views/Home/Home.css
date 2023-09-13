@@ -18,3 +18,20 @@ body {
 .home-container label {
   color: aquamarine;
 }
+.home-bar {
+  display: flex;
+  flex-direction: row-reverse;
+  margin-right: 280px;
+  margin: 10px;
+}
+.home-searchBar {
+  margin-right: 30px;
+}
+.home-pagination {
+  margin-right: 350px;
+  border-radius: 5%;
+}
+.home-filters {
+  margin-right: 100px;
+  border-radius: 5%;
+}
