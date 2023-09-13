@@ -137,30 +137,35 @@ const Form = () => {
 
   const handleChange = (event) => {
     if (event.target.name === "teams") {
-      const selectedOptions = Array.from(
+      /* const selectedOptions = Array.from(
         event.target.selectedOptions,
         (option) => option.value
       );
       setInput({
         ...input,
-        teams: selectedOptions, //Fijarse creo que el profe hizo una copia de selecterOptions ej: [...selectedOptions, event.target.value]
+        teams: selectedOptions, 
+      }); */
+      setInput({
+        ...input,
+        teams: [...input.teams, event.target.value],
       });
     } else {
       setInput({
         ...input,
         [event.target.name]: event.target.value,
       });
-      validate(
-        {
-          ...input,
-          [event.target.name]: event.target.value,
-        }, //Le paso lo mismo que en setInput porque el estado no se actualiza en tiempo real cuando es dentro de la misma funcion
-        event.target.name
-      );
     }
+    validate(
+      {
+        ...input,
+        [event.target.name]: event.target.value,
+      }, //Le paso lo mismo que en setInput porque el estado no se actualiza en tiempo real cuando es dentro de la misma funcion
+      event.target.name
+    );
+    console.log(input);
   };
 
-  // Traigo los temperaments de la DB para colocarlos en el Form en la lista desplegable.
+  // Traigo los teams de la DB para colocarlos en el Form en la lista desplegable.
   useEffect(() => {
     if (!allTeams.lenght) {
       const result = dispatch(getAllTeams());
@@ -223,14 +228,14 @@ const Form = () => {
           {errors.description}
         </div>
         <label>Teams:</label>
-        <select name="teams" onChange={handleChange} multiple>
+        <select name="teams" onChange={handleChange} /* multiple */>
           <option value="none">Select Teams</option>
           {allTeams.map((team) => (
             <option key={team.id} value={team.id}>
               {team.name}
             </option>
           ))}
-          {/* Ver Video Clase Para colocar los TEAMS */}
+          {/* Ver Video Clase Para colocar los TEAMS 1:08:27 */}
         </select>
         <input
           disabled={disable()}
